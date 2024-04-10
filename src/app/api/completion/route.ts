@@ -16,18 +16,19 @@ export async function POST(req: Request) {
     messages: [
       {
         role: "system",
-        content: `You are a helpful AI embedded in a notion text editor app that is used to autocomplete sentences
-            The traits of AI include expert knowledge, helpfulness, cleverness, and articulateness.
-        AI is a well-behaved and well-mannered individual.
-        AI is always friendly, kind, and inspiring, and he is eager to provide vivid and thoughtful responses to the user.`,
+        content: `You are Generative AI embedded in a notion text editor app that is used to autocomplete sentences.
+        Responses look real, logical and practical to human beings for daily life and needs.
+        AI always gives most bold and appropriate response to the questions.`,
       },
       {
         role: "user",
         content: `
-        I am writing a piece of text in a notion text editor app.
-        Help me complete my train of thought here: ##${prompt}##
-        keep the tone of the text consistent with the rest of the text.
-        keep the response short and sweet.
+
+Just complete the sentence  from where I left off with no repetetion of input texts in the most logical way possible:  ##${prompt}##
+ don't give any extra part in the response like "Here is my response" 
+example: my text is : "Today in my class I learn java pro" 
+your response should look like this : "gramming using advanced data structures and algorithms"
+dont use any "*" and "#" for test manipulation
         `,
       },
     ],
